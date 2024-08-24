@@ -11,7 +11,6 @@ import springboot.spring_advanced1.strategy_practice.Member;
 class DiscountServiceTest {
     @Autowired
     public DiscountService service;
-
     @Test
     void discountBronze() {
         // given
@@ -23,7 +22,17 @@ class DiscountServiceTest {
         Assertions.assertThat(discount).isEqualTo(price/10);
     }
     @Test
-    void discountOverBronze() {
+    void discountOverSilver() {
+        // given
+        Member SilverMember = new Member("SilverMember", Grade.SILVER);
+        // when
+        int price = 5000;
+        int discount = service.applyToDiscount(SilverMember, price);
+        // then
+        Assertions.assertThat(discount).isEqualTo(price / 15);
+    }
+    @Test
+    void discountOverGold() {
         // given
         Member goldMember = new Member("GoldMember", Grade.GOLD);
         // when
@@ -31,7 +40,6 @@ class DiscountServiceTest {
         int discount = service.applyToDiscount(goldMember, price);
         // then
         Assertions.assertThat(discount).isEqualTo(price / 20);
-
     }
 
 }

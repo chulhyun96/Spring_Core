@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@RequiredArgsConstructor
 public class FixDiscount implements DiscountPolicy {
     @Override
     public int discount(Member member, int price) {

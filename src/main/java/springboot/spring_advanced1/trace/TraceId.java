@@ -16,23 +16,21 @@ public class TraceId {
         this.id = id;
         this.level = level;
     }
-    public String createId() {
+    private String createId() {
         return UUID.randomUUID().toString().substring(0, 8);
     }
     public TraceId createNextId() {
-        return new TraceId(createId(), level + 1);
+        return new TraceId(id, level + 1);
     }
     public TraceId createPreviousId() {
-        return new TraceId(createId(), level - 1);
+        return new TraceId(id, level - 1);
     }
     public boolean isFirstLevel() {
         return level == 0;
     }
-
     public String getId() {
         return id;
     }
-
     public int getLevel() {
         return level;
     }

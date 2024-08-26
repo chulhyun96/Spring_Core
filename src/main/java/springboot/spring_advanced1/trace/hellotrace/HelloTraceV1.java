@@ -1,7 +1,9 @@
-package springboot.spring_advanced1.trace;
+package springboot.spring_advanced1.trace.hellotrace;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import springboot.spring_advanced1.trace.TraceId;
+import springboot.spring_advanced1.trace.TraceStatus;
 
 @Slf4j
 @Component
@@ -14,22 +16,25 @@ public class HelloTraceV1 {
     public TraceStatus begin(String message) {
         TraceId traceId = new TraceId();
         long startTimeMs = System.currentTimeMillis();
-        log.info("[{}] {}{}", traceId, addSpace(START_PREFIX, traceId.getLevel()), message);
+        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), message);
         return new TraceStatus(traceId, startTimeMs, message);
     }
 
     public void end(TraceStatus status) {
         complete(status, null);
     }
+    public void exception(TraceStatus status, Exception e) {
+        complete(status, e);
+    }
 
     private void complete(TraceStatus status, Exception e) {
-        long stopTimeMs = System.currentTimeMillis();
+        Long stopTimeMs = System.currentTimeMillis();
         long resultTimeMs = stopTimeMs - status.getStartTimeMs();
         TraceId traceId = status.getTraceId();
         if (e == null) {
             log.info("[{}] {}{} time={}ms", traceId.getId(),
-                    addSpace(COMPLETE_PREFIX, traceId.getLevel()),
-                    status.getMessage(), resultTimeMs);
+                    addSpace(COMPLETE_PREFIX, traceId.getLevel()), status.getMessage(),
+                    resultTimeMs);
         } else {
             log.info("[{}] {}{} time={}ms ex={}", traceId.getId(),
                     addSpace(EX_PREFIX, traceId.getLevel()), status.getMessage(), resultTimeMs,

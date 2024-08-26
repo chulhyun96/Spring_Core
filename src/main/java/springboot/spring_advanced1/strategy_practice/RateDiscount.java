@@ -1,11 +1,12 @@
 package springboot.spring_advanced1.strategy_practice;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class RateDiscount implements DiscountPolicy{
+
     @Override
     public int discount(Member member, int price) {
         Grade grade = member.getGrade();

@@ -27,7 +27,6 @@ public class HelloTraceV2 {
         return new TraceStatus(nextId, startTimeMs, message);
     }
 
-
     public void end(TraceStatus status) {
         complete(status, null);
     }
@@ -44,7 +43,7 @@ public class HelloTraceV2 {
                     traceId.getLevel()) + status.getMessage() + " time=" + resultTimeMs + "ms");
         } else {
             log.info("[" + traceId.getId() + "] " + addSpace(EX_PREFIX,
-                            traceId.getLevel()) + status.getMessage() + " time=" + resultTimeMs + "ms" + "ex=" + e);
+                            traceId.getLevel()) + status.getMessage() + " time=" + resultTimeMs + "ms " + " ex=" + e);
         }
     }
 

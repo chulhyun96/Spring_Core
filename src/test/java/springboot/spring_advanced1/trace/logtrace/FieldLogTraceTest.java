@@ -5,8 +5,6 @@ import springboot.spring_advanced1.trace.TraceStatus;
 
 
 class FieldLogTraceTest {
-
-
     @Test
     void begin_end_level2() {
         FieldLogTrace trace = new FieldLogTrace();

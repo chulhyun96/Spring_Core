@@ -1,7 +1,10 @@
 package springboot.spring_advanced1.trace;
 
+import lombok.Getter;
+
 import java.util.UUID;
 
+@Getter
 public class TraceId {
 
     private String id;
@@ -27,12 +30,6 @@ public class TraceId {
     }
     public boolean isFirstLevel() {
         return level == 0;
-    }
-    public String getId() {
-        return id;
-    }
-    public int getLevel() {
-        return level;
     }
 }
 

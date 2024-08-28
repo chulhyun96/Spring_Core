@@ -1,6 +1,7 @@
 package springboot.spring_advanced1.trace.logtrace;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import springboot.spring_advanced1.trace.TraceId;
 import springboot.spring_advanced1.trace.TraceStatus;
 

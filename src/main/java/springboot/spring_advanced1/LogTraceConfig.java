@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springboot.spring_advanced1.trace.logtrace.FieldLogTrace;
 import springboot.spring_advanced1.trace.logtrace.LogTrace;
+import springboot.spring_advanced1.trace.logtrace.ThreadLocalLogTrace;
 
 @Configuration
 public class LogTraceConfig {
@@ -11,6 +12,7 @@ public class LogTraceConfig {
         장점이 있다.*/
     @Bean
     public LogTrace logTrace() {
-        return new FieldLogTrace();
+        return new ThreadLocalLogTrace();
     }
+
 }

@@ -26,7 +26,7 @@ public class FieldServiceTest {
         threadB.setName("thread-B");
 
         threadA.start();
-        sleep(100);
+        sleep(2000);
         threadB.start();
         sleep(2000); // 메인쓰레드 종료 대기. 얘가 없으면 threadB에 대한 결과가 출력되지 않고 그냥 끝나버린다.
         log.info("MAIN Thread end");

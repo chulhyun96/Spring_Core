@@ -4,8 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class RateDiscount implements DiscountPolicy{
+
+    @Override
+    public DiscountType getDiscountType() {
+        return DiscountType.FIX;
+    }
 
     @Override
     public int discount(Member member, int price) {

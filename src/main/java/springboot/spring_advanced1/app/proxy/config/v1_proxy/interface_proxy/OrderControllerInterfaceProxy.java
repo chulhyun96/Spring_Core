@@ -3,7 +3,6 @@ package springboot.spring_advanced1.app.proxy.config.v1_proxy.interface_proxy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import springboot.spring_advanced1.app.proxy.v1.OrderControllerV1;
-import springboot.spring_advanced1.app.proxy.v1.OrderServiceV1;
 import springboot.spring_advanced1.trace.TraceStatus;
 import springboot.spring_advanced1.trace.logtrace.LogTrace;
 

@@ -7,6 +7,7 @@ import springboot.spring_advanced1.app.proxy.config.v1_proxy.interface_proxy.Ord
 import springboot.spring_advanced1.app.proxy.config.v1_proxy.interface_proxy.OrderServiceInterfaceProxy;
 import springboot.spring_advanced1.app.proxy.v1.*;
 import springboot.spring_advanced1.trace.logtrace.LogTrace;
+import springboot.spring_advanced1.trace.logtrace.ThreadLocalLogTrace;
 
 @Configuration
 public class InterfaceProxyConfig {
@@ -24,5 +25,9 @@ public class InterfaceProxyConfig {
     public OrderRepositoryV1 orderRepository(LogTrace logTrace){
         OrderRepositoryV1Impl repositoryImpl = new OrderRepositoryV1Impl();
         return new OrderRepositoryInterfaceProxy(repositoryImpl, logTrace);
+    }
+    @Bean
+    public LogTrace logTrace(){
+        return new ThreadLocalLogTrace();
     }
 }

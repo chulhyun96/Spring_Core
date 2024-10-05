@@ -1,8 +1,7 @@
-package springboot.spring_advanced1;
+package springboot.spring_advanced1.app.config.v2_dynamicproxy.handler;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springboot.spring_advanced1.trace.logtrace.FieldLogTrace;
 import springboot.spring_advanced1.trace.logtrace.LogTrace;
 import springboot.spring_advanced1.trace.logtrace.ThreadLocalLogTrace;
 

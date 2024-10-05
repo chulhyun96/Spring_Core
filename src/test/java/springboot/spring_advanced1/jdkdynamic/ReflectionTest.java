@@ -15,11 +15,11 @@ public class ReflectionTest {
     void reflection0() {
         Hello target = new Hello();
 
-//        excuteLogging(target::callA);
-//        excuteLogging(target::callB);
+        executeLogging(target::callA);
+        executeLogging(target::callB);
     }
 
-    private void excuteLogging(Supplier<String> method){
+    private void executeLogging(Supplier<String> method){
         log.info("start");
         String result1 = method.get();
         log.info("result :{}", result1);

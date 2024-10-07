@@ -35,6 +35,7 @@ public class ReflectionTest {
         Method callA = aClass.getMethod(method);
         dynamicCall(callA, hello);
     }
+
     private void dynamicCall(Method method, Object target) throws Exception {
         log.info("start");
         Object result = method.invoke(target);// 차이

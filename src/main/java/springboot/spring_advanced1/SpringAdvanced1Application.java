@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
 import springboot.spring_advanced1.app.config.v2_dynamicproxy.DynamicProxyFilterConfig;
+import springboot.spring_advanced1.testconfig.MemberConfig;
+import springboot.spring_advanced1.testconfig.MemberRepositroy;
+import springboot.spring_advanced1.testconfig.MemberService;
+import springboot.spring_advanced1.testconfig.OrderService;
 
 /*@Import({AppV1Config.class,AppV2Config.class})*/
 /*@Import(InterfaceProxyConfig.class)*/
@@ -15,7 +19,5 @@ import springboot.spring_advanced1.app.config.v2_dynamicproxy.DynamicProxyFilter
 public class SpringAdvanced1Application {
     public static void main(String[] args) {
         SpringApplication.run(SpringAdvanced1Application.class, args);
-
-
     }
 }
